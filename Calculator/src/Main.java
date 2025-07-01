@@ -1,12 +1,13 @@
+package bmicalculator;
 
 import java.util.Scanner;
 
-public class Main {
+public class Project1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        char choice;
 
-        // Main program loop
         do {
             // Get user input
             System.out.print("Enter your weight in kg: ");
@@ -19,25 +20,28 @@ public class Main {
             double bmi = weight / (height * height);
             System.out.println("Your BMI is: " + bmi);
 
-            // Determine BMI category
+            // Display BMI category
             if (bmi < 16.0) {
                 System.out.println("Severely Underweight");
-            } else if (bmi >= 16.0 && bmi <= 18.4) {
+            } else if (bmi <= 18.4) {
                 System.out.println("Underweight");
-            } else if (bmi >= 18.5 && bmi <= 24.9) {
+            } else if (bmi <= 24.9) {
                 System.out.println("Normal");
-            } else if (bmi >= 25.0 && bmi <= 29.9) {
+            } else if (bmi <= 29.9) {
                 System.out.println("Overweight");
-            } else if (bmi >= 30.0 && bmi <= 34.9) {
+            } else if (bmi <= 34.9) {
                 System.out.println("Moderately Obese");
-            } else if (bmi >= 35.0 && bmi <= 39.9) {
+            } else if (bmi <= 39.9) {
                 System.out.println("Severely Obese");
             } else {
                 System.out.println("Morbidly Obese");
             }
 
-        } while (askToRepeat(scanner) == 'Y' || askToRepeat(scanner) == 'y');
+            choice = askToRepeat(scanner);
 
+        } while (choice == 'Y' || choice == 'y');
+
+        System.out.println("Thanks for using the BMI Calculator. Stay healthy!");
         scanner.close();
     }
 
